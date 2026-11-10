@@ -1,0 +1,135 @@
+<wxs module="tool" src="../../utils/tool.wxs"></wxs>
+<view class="detail-container" >
+    <view class="content_detail" bind:tap="authTap">
+        <swiper indicator-dots="{{true}}" autoplay="{{true}}"
+                interval="{{4000}}" class="swiper"
+                vertical="{{false}}" interval="{{4000}}"
+                duration="{{500}}" indicator-color='#00000030'
+                indicator-active-color="#000000"
+                autoplay="{{true}}" circular="{{true}}">
+            <swiper-item class="swiper-item" wx:for="{{pictureList}}" bindtap="previewImgTap"
+                         data-currenturl="{{item}}" wx:key="index">
+                <image wx:if="{{item.length > 1}}" src="{{baseUrl+item}}" mode="aspectFit"
+                       class="swiper-img"></image>
+            </swiper-item>
+        </swiper>
+        <view class="detail-box">
+            <view class="price-box">
+                <view class="price-price-box">
+                    <text class="yuan">￥</text>
+                    <text class="price-num">{{detailList.price}}</text>
+                </view>
+                <view wx:if="{{islike}}" class="iconfont icon-likefill1  storeUp"
+                      bind:tap="cancelLikeTap"></view>
+                <view wx:else="" class="iconfont   icon-likeline2 cancel-storeUp"
+                      bind:tap="likeTap"></view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">商品名称：</view>
+                <view class="detail-item-text">{{detailList.shangpinmingcheng}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">商品分类：</view>
+                <view class="detail-item-text">{{detailList.shangpinfenlei}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">规格：</view>
+                <view class="detail-item-text" >{{detailList.guige}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">品牌：</view>
+                <view class="detail-item-text" >{{detailList.pinpai}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">发布时间：</view>
+                <view class="detail-item-text">{{detailList.fabushijian}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">库存：</view>
+                <view class="detail-item-text" >{{detailList.alllimittimes}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">收藏数：</view>
+                <view class="detail-item-text" >{{detailList.storeupNumber}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">评论数：</view>
+                <view class="detail-item-text" >{{detailList.discussNumber}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">价格：</view>
+                <view class="detail-item-text" >{{detailList.price}}</view>
+            </view>
+
+            <view class="textarea-box">
+                <view class="textarea-label">商品详情</view>
+                <view class="textarea-text">
+                    <rich-text nodes="{{detailList.shangpinxiangqing}}"></rich-text>
+                </view>
+            </view>
+            <view class="comment-box">
+                <view class="comment-header">
+                    <view class="comment-title">评论</view>
+                    <view class="comment-add-box" bind:tap="addCommentap">
+                        <view class="comment-add-icon"
+                              class="iconfont icon-xinzeng1"></view>
+                        <view class="comment-add-text">添加评论</view>
+
+                    </view>
+                </view>
+                <view class="comment-item" wx:for="{{commentList}}" wx:key="index">
+                    <view class="user-info">
+                        <image class="item-avatar" src="{{baseUrl+item.avatarurl}}" mode="aspectFit"/>
+                        <view class="item-nickname">{{item.nickname}}</view>
+                    </view>
+                    <view class="comment-content">
+                        <rich-text nodes="{{item.content}}"/>
+                    </view>
+                    <view wx:if="{{item.reply}}" class="comment-reply">
+                        回复：
+                        <rich-text nodes="{{item.reply}}"/>
+                    </view>
+                    <view class="comment-time">
+                        {{item.addtime}}
+                    </view>
+                    <view class="istop" wx:if="{{item.istop}}">
+                        <span class="iconfont icon-flight-takeoff-fill"></span>置顶
+                    </view>
+                    <div class="zancai-box">
+                        <div class="zan-item active" wx:if="{{item.hasZan}}" bind:tap="commentZanCaiClick" data-item="{{item}}" data-type="1" style="cursor: pointer;">
+                            <span class="iconfont icon-thumb-up-fill2"></span>
+                            <span class="label">赞</span>
+                            <span class="num">({{item.thumbsupnum}})</span>
+                        </div>
+                        <div class="zan-item" wx:else bind:tap="commentZanCaiClick" data-item="{{item}}" data-type="1" style="cursor: pointer;">
+                            <span class="iconfont icon-thumb-up-line2"></span>
+                            <span class="label">赞</span>
+                            <span class="num">({{item.thumbsupnum}})</span>
+                        </div>
+                        <div class="cai-item active" wx:if="{{item.hasCai}}" bind:tap="commentZanCaiClick" data-item="{{item}}" data-type="-1" style="cursor: pointer;">
+                            <span class="iconfont icon-thumb-down-fill2"></span>
+                            <span class="label">踩</span>
+                            <span class="num" style="font-size: 14px;">({{item.crazilynum}})</span>
+                        </div>
+                        <div class="cai-item" wx:else bind:tap="commentZanCaiClick" data-item="{{item}}" data-type="-1" style="cursor: pointer;">
+                            <span class="iconfont icon-thumb-down-line2"></span>
+                            <span class="label">踩</span>
+                            <span class="num" style="font-size: 14px;">({{item.crazilynum}})</span>
+                        </div>
+                    </div>
+                </view>
+            </view>
+        </view>
+
+        <view class="operate_box_detail">
+            <button  wx:if="{{detailList.alllimittimes>0}}"  bind:tap="addCart" class="gou-btn">
+                加入购物车
+            </button>
+            <button class="buy-btn" wx:if="{{detailList.alllimittimes>0}}"  bind:tap="onBuyTap">
+                立即购买
+            </button>
+            <button class="wan" wx:if="{{detailList.alllimittimes<=0}}">已售罄</button>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "com-date":"/component/com-date/com-date"
+  },
+  "navigationBarTitleText": "网站介绍",
+  "navigationBarBackgroundColor":"#0949F7",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+
+}

@@ -1,0 +1,26 @@
+<wxs module="tool" src="../../utils/tool.wxs"></wxs>
+<view class="detail-container" >
+    <view class="content_detail" bind:tap="authTap">
+        <view class="detail-box">
+            <view class="detail-item-box">
+                <view class="detail-item-label">标题：</view>
+                <view class="detail-item-text" >{{detailList.title}}</view>
+            </view>
+            <view class="detail-item-box">
+                <view class="detail-item-label">副标题：</view>
+                <view class="detail-item-text" >{{detailList.subtitle}}</view>
+            </view>
+
+            <view class="textarea-box">
+                <view class="textarea-label">内容</view>
+                <view class="textarea-text">
+                    <rich-text nodes="{{detailList.content}}"></rich-text>
+                </view>
+            </view>
+        </view>
+
+        <view class="operate_box_detail">
+        </view>
+    </view>
+
+</view>

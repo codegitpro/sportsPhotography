@@ -1,0 +1,11 @@
+<view class="charts-view">
+    <view class="chartBtn-row">
+        <scroll-view class="chartBtn-scroll" scroll-x>
+            <button wx:if="{{(centerType?auth.back['库存统计']:auth.front['库存统计'])}}" class="chartBtn" type="primary" size='mini' bind:tap="changeActiveIndex" data-index="{{1}}">库存统计</button>
+            <button wx:if="{{(centerType?auth.back['分类统计']:auth.front['分类统计'])}}" class="chartBtn" type="primary" size='mini' bind:tap="changeActiveIndex" data-index="{{2}}">分类统计</button>
+        </scroll-view>
+    </view>
+    <view class="chartContainer">
+        <ec-canvas id="mychart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+    </view>
+</view>

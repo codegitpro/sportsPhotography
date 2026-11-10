@@ -1,0 +1,146 @@
+{
+    "usingComponents": {
+        "van-popup": "@vant/weapp/popup/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-calendar": "@vant/weapp/calendar/index",
+        "van-button": "@vant/weapp/button/index",
+        "van-uploader": "@vant/weapp/uploader/index"
+    },
+    "pages": [
+        "pages/index/index",
+        "pages/login/login",
+        "pages/forget/forget",
+        "pages/yonghu/register",
+        "pages/yonghu/user-info",
+        "pages/shop-order/orders-confirm",
+        "pages/shop-order/orders-list",
+        "pages/shop-order/logistics",
+        "pages/shop-recharge/recharge",
+        "pages/shop-cart/shop-cart",
+        "pages/shop-recharge/pay-confirm",
+        "pages/address/list",
+        "pages/address/detail",
+        "pages/shop-recharge/buyvip-confirm",
+        "pages/shop-recharge/buyvip-result",
+        "pages/reply/reply",
+        "pages/news/detail",
+        "pages/news/list",
+        "pages/systemintro/detail",
+        "pages/systemintro/update-and-add",
+        "pages/systemintro/list",
+        "pages/sheyingzuopin/detail",
+        "pages/sheyingzuopin/update-and-add",
+        "pages/sheyingzuopin/list",
+        "pages/sheyingzuopin/charts",
+        "pages/sheyingzuopin/list-tabbar",
+        "pages/storeup/list",
+        "pages/sheyingleixing/detail",
+        "pages/sheyingleixing/update-and-add",
+        "pages/sheyingleixing/list",
+        "pages/biaoqian/detail",
+        "pages/biaoqian/update-and-add",
+        "pages/biaoqian/list",
+        "pages/yonghu/detail",
+        "pages/yonghu/update-and-add",
+        "pages/yonghu/list",
+        "pages/sheyingyuyue/detail",
+        "pages/sheyingyuyue/update-and-add",
+        "pages/sheyingyuyue/list",
+        "pages/sheyingyuyue/charts",
+        "pages/syslog/detail",
+        "pages/syslog/update-and-add",
+        "pages/syslog/list",
+        "pages/huazhuangyuyue/detail",
+        "pages/huazhuangyuyue/update-and-add",
+        "pages/huazhuangyuyue/list",
+        "pages/huazhuangyuyue/charts",
+        "pages/kaojisheying/detail",
+        "pages/kaojisheying/update-and-add",
+        "pages/kaojisheying/list",
+        "pages/kaojisheying/charts",
+        "pages/kaojisheying/list-tabbar",
+        "pages/kaojisheyingyuyue/detail",
+        "pages/kaojisheyingyuyue/update-and-add",
+        "pages/kaojisheyingyuyue/list",
+        "pages/zhoubianshangcheng/detail",
+        "pages/zhoubianshangcheng/update-and-add",
+        "pages/zhoubianshangcheng/list",
+        "pages/zhoubianshangcheng/charts",
+
+        "pages/rechargeRecord/detail",
+        "pages/rechargeRecord/update-and-add",
+        "pages/rechargeRecord/list",
+        "pages/shangpinfenlei/detail",
+        "pages/shangpinfenlei/update-and-add",
+        "pages/shangpinfenlei/list",
+        "pages/chat/list",
+        "pages/chathelper/detail",
+        "pages/chathelper/update-and-add",
+        "pages/chathelper/list",
+        "pages/discusssheyingzuopin/detail",
+        "pages/discusssheyingzuopin/update-and-add",
+        "pages/discusssheyingzuopin/list",
+        "pages/discusszhoubianshangcheng/detail",
+        "pages/discusszhoubianshangcheng/update-and-add",
+        "pages/discusszhoubianshangcheng/list",
+        "pages/center/center",
+        "pages/webOpen/webOpen"
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的"
+        },
+        "scope.getFuzzyLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的"
+        },
+        "scope.getLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的"
+        }
+    },
+    "requiredPrivateInfos": [
+        "chooseLocation",
+        "getLocation"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#33a3dc",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "static/tabs/2/index.png",
+                "selectedIconPath": "static/tabs/2/index1.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/sheyingzuopin/list-tabbar",
+                "iconPath": "/static/tabs/2/icon1.png",
+                "selectedIconPath": "/static/tabs/2/icon1_act.png",
+                "text": "摄影作品"
+            },
+            {
+                "pagePath": "pages/kaojisheying/list-tabbar",
+                "iconPath": "/static/tabs/2/icon2.png",
+                "selectedIconPath": "/static/tabs/2/icon2_act.png",
+                "text": "考级摄影"
+            },
+            {
+                "pagePath": "pages/shop-cart/shop-cart",
+                "iconPath": "static/tabs/2/cart.png",
+                "selectedIconPath": "static/tabs/2/cart1.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/center/center",
+                "iconPath": "static/tabs/2/mine.png",
+                "selectedIconPath": "static/tabs/2/mine1.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

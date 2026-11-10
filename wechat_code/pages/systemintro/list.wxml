@@ -1,0 +1,39 @@
+<wxs module="tool" src="../../utils/tool.wxs"></wxs>
+<view class="list-container">
+    <view class="list-box">
+        <view class="search">
+
+            <view class="search-inp-box">
+                <text class="iconfont icon-sousuo1"></text>
+                <input class="search-input" model:value="{{title}}" type="text" id=""
+                       placeholder="标题"/>
+            </view>
+            <view class="searchBtn" bind:tap="search">搜索</view>
+
+        </view>
+        <button class="add-btn" wx:if="{{centerType?auth.back['新增']:auth.front['新增']}}" bind:tap="addTap">新增</button>
+        <view class="categoryFlag-box">
+
+                <view class="goodsList-box">
+                    <view class="goods-item" bind:tap="detailBtn" data-item="{{item}}" wx:for="{{goodsListData}}"
+                          wx:key="index">
+                        <view class="goods-title2-box">
+                        </view>
+    
+                        <view class="operate-box">
+                            <view capture-bind:tap="editBtn" data-item="{{item}}" class="edit-box" wx:if="{{centerType?auth.back['修改']:auth.front['修改']}}">
+                                <text class="iconfont icon-xiugai1 edit-icons"></text>
+                                <text class="edit-text">修改</text>
+                            </view>
+                            <view wx:if="{{centerType?auth.back['删除']:auth.front['删除']}}" class="delete-box" catchtap="deletetap">
+                                <text class="iconfont icon-shanchu1 del-icons"></text>
+                                <text capture-bind:tap="deleteBtn" data-id="{{item.id}}" data-item="{{item}}" class="del-text">删除</text>
+                            </view>
+                        </view>
+                    </view>
+    
+                </view>
+        </view>
+
+    </view>
+</view>

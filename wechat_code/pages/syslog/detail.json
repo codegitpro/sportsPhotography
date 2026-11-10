@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "rating":"/component/rating/index",
+    "com-video": "/component/com-video/com-video",
+    "com-popup": "/component/com-popup/com-popup"
+  },
+  "navigationBarTitleText": "操作日志",
+  "navigationBarBackgroundColor":"#0949F7",
+  "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,188 @@
+.register-container {
+    padding:300rpx 0px 24rpx 0px;
+    align-content:center;
+    background:url(http://localhost:8080/sportsPhotography/file/bfe010bfcc8f40dc9a43bbe0cce00f94.gif) no-repeat center top / 100% ;
+    display:flex;
+    width:100%;
+    min-height:100vh;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.register-container {
+    background-image: url("http://localhost:8080/sportsPhotography/file/bfe010bfcc8f40dc9a43bbe0cce00f94.gif");
+}
+.avatar {
+    border-radius:8rpx;
+    margin:0px auto 24rpx auto;
+    display:none;
+    width:160rpx;
+    height:160rpx;
+}
+.content_register {
+    border-radius:60rpx 60rpx 0px 0px;
+    padding:100rpx 74rpx 24rpx 74rpx;
+    background:#FFFFFF;
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.upload-text{
+    color:#000000;
+}
+.upload-img {
+    border-radius:16rpx;
+    display:block;
+    width:160rpx;
+    height:160rpx;
+}
+.box-uploadBox{
+    padding:24rpx 24rpx 24rpx 24rpx;
+    width:100%;
+    height:100%;
+}
+.box{
+    border:2rpx solid #9CA3AF;
+    border-radius:40rpx;
+    margin:0 0 60rpx 0;
+    width:100%;
+    height:auto;
+}
+input{
+    border-radius:60rpx;
+    padding:0px 24rpx 0 24rpx;
+    margin:0px 0px 0px 0px;
+    color:#000000;
+    background:#ffffff90;
+    width:100%;
+    font-size:28rpx;
+    border-width:0px;
+    height:88rpx;
+}
+.select-date{
+    border-radius:40rpx;
+    padding:0px 24rpx;
+    margin:0px 0px 24rpx 0px;
+    background:#ffffff90;
+    border-color:#9CA3AF;
+    border-width:2rpx;
+    border-style:solid;
+    height:auto;
+}
+.picker-text{
+    color:#666666;
+    width:100%;
+    font-size:28rpx;
+    line-height:88rpx;
+}
+.register-btn {
+    border-radius:50rpx;
+    padding:0px 0px 0px 0px;
+    margin:24rpx 0px 30rpx 0px;
+    color:#FFFFFF;
+    background:#0949F7;
+    width:100%;
+    font-size:32rpx;
+    border-width:0px;
+    line-height:88rpx;
+    height:88rpx;
+}
+.radio-box{
+    padding:20rpx 0 20rpx 0;
+    width:100%;
+}
+
+
+.checkbox-box{
+    padding:20rpx 0px 20rpx 0px;
+    width:100%;
+}
+.checkbox-label{
+    padding:0px 0px 12rpx 0px;
+}
+.checkbox-group-box{
+    display:flex;
+    align-items:center;
+}
+.code-box{
+    border:2rpx solid #9CA3AF;
+    border-radius:40rpx;
+    margin:0px 0px 24rpx 0px;
+    display:flex;
+    width:100%;
+    flex-wrap:wrap;
+    height:auto;
+    position: relative;
+}
+.send-code-btn {
+    white-space: nowrap;
+    border-radius:40rpx;
+    padding:0px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
+    background:#ffffff99;
+    display:flex;
+    width:168rpx;
+    border-width:0px;
+    justify-content:center;
+    align-items:center;
+    height:88rpx;
+}
+.code-input{
+    border-radius:40rpx;
+    padding:0px 24rpx 0px 24rpx;
+    margin:0px 0px 0px 0px;
+    color:#000000;
+    background:#ffffff90;
+    width:calc(100% - 168rpx);
+    font-size:28rpx;
+    border-width:0px;
+    height:88rpx;
+}
+
+.item-box{
+    border:2rpx solid #9CA3AF;
+    border-radius:40rpx;
+    margin:0 0 60rpx 0;
+    width:100%;
+    height:auto;
+}
+.item-label{
+}
+
+.item-radio-itemBox{
+    display:flex;
+    align-items:center;
+}
+
+.active{
+    color:#0949F7;
+}
+
+.radio-itemText{
+    color:#666666;
+}
+
+.checkBox-active{
+    color:#0949F7;
+}
+.checkBox-itemText{
+    color:#666666;
+}
+.item-checkbox-itemBox{
+    display:flex;
+    align-items:center;
+}
+.item-checkbox-item{
+    margin:0px 20rpx 0px 0px;
+    display:flex;
+    align-items:center;
+}
+checkbox .wx-checkbox-input {
+    background:#FFFFFF;
+    border-color:#666666;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    color:#FFFFFF;
+    background:#0949F7;
+    border-color:#ff7a00;
+}

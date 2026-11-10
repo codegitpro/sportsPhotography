@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-rate": "@vant/weapp/rate/index",
+    "com-date": "/component/com-date/com-date",
+    "com-edit": "/component/com-editor/com-editor",
+    "com-manySel": "/component/com-manySel/com-manySel"
+  },
+  "navigationBarTitleText": "网站介绍",
+  "navigationBarBackgroundColor":"#0949F7",
+  "navigationBarTextStyle": "white"
+}

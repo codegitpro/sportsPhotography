@@ -1,0 +1,11 @@
+var split = function(str,separator){
+    return str.split(separator)
+}
+var replaceByRegExp = function(str,pattern,flags='g',replacer=''){
+    return str.replace(getRegExp(pattern,flags),replacer)
+}
+
+module.exports = {
+    split:split,
+    replaceByRegExp:replaceByRegExp
+}

@@ -1,0 +1,87 @@
+<wxs module="tool" src="../../utils/tool.wxs"></wxs>
+<view class="update-container">
+    <view class="content">
+        <view class="form-box">
+            <view class="item-box">
+                <view class="item-label">标题</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.title==true}}"
+                       placeholder="标题"
+                       value="{{ruleForm.title}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.title"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">副标题</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.subtitle==true}}"
+                       placeholder="副标题"
+                       value="{{ruleForm.subtitle}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.subtitle"/>
+            </view>
+            <view class="item-box" bindtap="uploadpicture1">
+                <view class="item-label">图片1</view>
+                <image wx:if="{{ruleForm.picture1}}"
+                       class="item-img"
+                       src="{{baseUrl+tool.split(ruleForm.picture1,',')[0]}}"
+                       mode="aspectFill"
+                >
+                </image>
+                <image wx:else
+                       class="item-img"
+                       src="../../static/upload.png"
+                       mode="aspectFill"
+                       >
+                </image>
+            </view>
+            <view class="item-box" bindtap="uploadpicture2">
+                <view class="item-label">图片2</view>
+                <image wx:if="{{ruleForm.picture2}}"
+                       class="item-img"
+                       src="{{baseUrl+tool.split(ruleForm.picture2,',')[0]}}"
+                       mode="aspectFill"
+                >
+                </image>
+                <image wx:else
+                       class="item-img"
+                       src="../../static/upload.png"
+                       mode="aspectFill"
+                       >
+                </image>
+            </view>
+            <view class="item-box" bindtap="uploadpicture3">
+                <view class="item-label">图片3</view>
+                <image wx:if="{{ruleForm.picture3}}"
+                       class="item-img"
+                       src="{{baseUrl+tool.split(ruleForm.picture3,',')[0]}}"
+                       mode="aspectFill"
+                >
+                </image>
+                <image wx:else
+                       class="item-img"
+                       src="../../static/upload.png"
+                       mode="aspectFill"
+                       >
+                </image>
+            </view>
+            <view class="item-box" style="display: flex;flex-wrap: wrap;">
+                <view class="item-label" style="width: 100%;text-align: left;">内容</view>
+                <com-edit class="item_edit"
+                          content="{{ruleForm.content}}"
+                          bind:contentChange="editorChange"
+                          data-key="ruleForm.content"
+                          placeholder="请输入内容"
+                ></com-edit>
+            </view>
+        </view>
+        <view class="btn-box">
+            <button  class="submit-btn"
+                     bindtap="onSubmitTap">提交
+            </button>
+        </view>
+    </view>
+
+</view>

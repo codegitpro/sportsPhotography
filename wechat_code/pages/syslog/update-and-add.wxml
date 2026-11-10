@@ -1,0 +1,72 @@
+<wxs module="tool" src="../../utils/tool.wxs"></wxs>
+<view class="update-container">
+    <view class="content">
+        <view class="form-box">
+            <view class="item-box">
+                <view class="item-label">用户名</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.username==true}}"
+                       placeholder="用户名"
+                       value="{{ruleForm.username}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.username"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">用户操作</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.operation==true}}"
+                       placeholder="用户操作"
+                       value="{{ruleForm.operation}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.operation"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">请求方法</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.method==true}}"
+                       placeholder="请求方法"
+                       value="{{ruleForm.method}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.method"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">请求时长(毫秒)</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.time==true}}"
+                       placeholder="请求时长(毫秒)"
+                       value="{{ruleForm.time}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.time"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">ip地址</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.ip==true}}"
+                       placeholder="ip地址"
+                       value="{{ruleForm.ip}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.ip"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">请求参数</view>
+                <textarea class="item_textarea"
+                          value="{{ruleForm.params}}"
+                          bindinput="valueChange"
+                          data-key="ruleForm.params"
+                          placeholder="请求参数"
+                          maxlength="300"></textarea>
+            </view>
+        </view>
+        <view class="btn-box">
+            <button  class="submit-btn"
+                     bindtap="onSubmitTap">提交
+            </button>
+        </view>
+    </view>
+
+</view>

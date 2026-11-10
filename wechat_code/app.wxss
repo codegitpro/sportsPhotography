@@ -1,0 +1,29 @@
+/**app.wxss**/
+@import "/static/iconfig/iconfont.wxss";
+@import "/static/iconfig/icon.wxss";
+@import "/static/css/list.wxss";
+@import "/static/css/detail.wxss";
+
+view,scroll-view,swiper,swiper-item,form,radio-group,checkbox-group,map,canvas,button,input{
+    box-sizing: border-box;
+}
+.coupon{
+    position: relative;
+}
+.no-coupon{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    right: 0;
+    opacity: 0.6;
+}
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}

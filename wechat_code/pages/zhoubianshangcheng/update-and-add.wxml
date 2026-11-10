@@ -1,0 +1,116 @@
+<wxs module="tool" src="../../utils/tool.wxs"></wxs>
+<view class="update-container">
+    <view class="content">
+        <view class="form-box">
+            <view class="item-box">
+                <view class="item-label">商品名称</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.shangpinmingcheng==true}}"
+                       placeholder="商品名称"
+                       value="{{ruleForm.shangpinmingcheng}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.shangpinmingcheng"/>
+            </view>
+            <view class="item-box" bindtap="uploadtupian">
+                <view class="item-label">图片</view>
+                <image wx:if="{{ruleForm.tupian}}"
+                       class="item-img"
+                       src="{{baseUrl+tool.split(ruleForm.tupian,',')[0]}}"
+                       mode="aspectFill"
+                >
+                </image>
+                <image wx:else
+                       class="item-img"
+                       src="../../static/upload.png"
+                       mode="aspectFill"
+                       >
+                </image>
+            </view>
+            <view class="item-box">
+                <view class="item-label">商品分类</view>
+                <picker class="down-item-picker"
+                        model:value="{{shangpinfenleiIndex}}"
+                        bindchange="shangpinfenleiChange"
+                        range="{{shangpinfenleiOptions}}">
+                    <view class="down-item-picker-text">
+                        {{ruleForm.shangpinfenlei||"请选择商品分类"}}
+                    </view>
+                </picker>
+            </view>
+            <view class="item-box">
+                <view class="item-label">规格</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.guige==true}}"
+                       placeholder="规格"
+                       value="{{ruleForm.guige}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.guige"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">品牌</view>
+                <input class="item-input"
+                       type="text"
+                       disabled="{{disabledForm.pinpai==true}}"
+                       placeholder="品牌"
+                       value="{{ruleForm.pinpai}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.pinpai"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">发布时间</view>
+                <view class="down-item-picker" bindtap="onfabushijianTap">
+                    <view class="down-item-picker-text">{{ruleForm.fabushijian||"请选择发布时间"}}</view>
+                </view>
+            </view>
+            <com-date isShowPicker="{{showfabushijian}}"
+                      bind:dateHandler="fabushijianChange"></com-date>
+            <view class="item-box">
+                <view class="item-label">单限</view>
+                <input class="item-input"
+                       type="number"
+                       disabled="{{disabledForm.onelimittimes==true}}"
+                       placeholder="单限"
+                       value="{{ruleForm.onelimittimes}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.onelimittimes"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">库存</view>
+                <input class="item-input"
+                       type="number"
+                       disabled="{{disabledForm.alllimittimes==true}}"
+                       placeholder="库存"
+                       value="{{ruleForm.alllimittimes}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.alllimittimes"/>
+            </view>
+            <view class="item-box">
+                <view class="item-label">价格</view>
+                <input class="item-input"
+                       type="digit"
+                       disabled="{{disabledForm.price==true}}"
+                       placeholder="价格"
+                       value="{{ruleForm.price}}"
+                       bindinput="valueChange"
+                       data-key="ruleForm.price"/>
+            </view>
+            <view class="item-box" style="display: flex;flex-wrap: wrap;">
+                <view class="item-label" style="width: 100%;text-align: left;">商品详情</view>
+                <com-edit class="item_edit"
+                          content="{{ruleForm.shangpinxiangqing}}"
+                          bind:contentChange="editorChange"
+                          data-key="ruleForm.shangpinxiangqing"
+                          placeholder="请输入商品详情"
+                ></com-edit>
+            </view>
+        </view>
+        <view class="btn-box">
+            <button  class="submit-btn"
+                     bindtap="onSubmitTap">提交
+            </button>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,66 @@
+<wxs module="tool" src="../../utils/tool.wxs"></wxs>
+<view class="register-container">
+    <view class="content_register">
+        <view class="avatar-box">
+            <image class="avatar" src="http://localhost:8080/sportsPhotography/file/7856ba26477849ea828f481fa2773a95.jpg" mode="aspectFit"/>
+        </view>
+        <view class="box">
+            <input type="text"
+                   placeholder="用户账号"
+                   value="{{ruleForm.yonghuzhanghao}}"
+                   bindinput="valueChange"
+                   data-key="ruleForm.yonghuzhanghao"/>
+        </view>
+        <view class="box">
+            <input password
+                   placeholder="请输入用户密码"
+                   value="{{ruleForm.yonghumima}}"
+                   bindinput="valueChange"
+                   data-key="ruleForm.yonghumima"/>
+        </view>
+        <view class="box">
+            <input password
+                   placeholder="请确认用户密码"
+                   value="{{ruleForm.yonghumima2}}"
+                   bindinput="valueChange"
+                   data-key="ruleForm.yonghumima2"/>
+        </view>
+        <view class="box">
+            <input type="text"
+                   placeholder="用户姓名"
+                   value="{{ruleForm.yonghuxingming}}"
+                   bindinput="valueChange"
+                   data-key="ruleForm.yonghuxingming"/>
+        </view>
+        <view class="box-uploadBox" bindtap="uploadtouxiang">
+            <image wx:if="{{ruleForm.touxiang}}"
+                   class="upload-img"
+                   src="{{baseUrl+tool.split(ruleForm.touxiang,',')[0]}}"
+                   mode="aspectFill"
+            >
+            </image>
+            <image wx:else
+                   class="upload-img"
+                   src="../../static/upload.png"
+                   mode="aspectFill"
+            >
+            </image>
+            <view class="upload-text">头像</view>
+        </view>
+        <view class="item-box">
+            <picker mode="selector" range="{{xingbieOptions}}"
+                    model:value="{{xingbieIndex}}" bindchange="xingbieChange">
+                <input type="text" placeholder="性别"
+                       value="{{ruleForm.xingbie||'请选择性别'}}"/>
+            </picker>
+        </view>
+        <view class="box">
+            <input type="text"
+                   placeholder="手机号码"
+                   value="{{ruleForm.shoujihaoma}}"
+                   bindinput="valueChange"
+                   data-key="ruleForm.shoujihaoma"/>
+        </view>
+        <button class="register-btn" bindtap="register">注册</button>
+    </view>
+</view>

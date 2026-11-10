@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "ec-canvas": "/component/ec-canvas/ec-canvas"
+    },
+  "navigationBarTitleText": "周边商城",
+  "navigationBarBackgroundColor":"#0949F7",
+  "navigationBarTextStyle": "white"
+}

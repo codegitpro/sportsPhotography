@@ -1,0 +1,55 @@
+<view class="page" wx:if="{{list.length}}">
+    <!-- style="bottom:{{bottomHeight}} + 'px' -->
+    <view class="listBG" wx:if="{{listShow}}" bindtap="close"></view>
+    <view class="list" wx:if="{{listShow}}">
+        <scroll-view :croll-y="true">
+            <view class="music" wx:for="{{list}}" wx:key="index" class="music  {{musicIndex==index?'musicActive':''}}" bindtap="playListClick" data-index="{{index}}">
+                <view class="left" wx:if="{{musicIndex!=index}}">
+                    {{ index + 1}}
+                </view>
+                <view class="left" wx:if="{{musicIndex==index}}">
+                    <image src="{{item.tupian?baseUrl + item.tupian.split(',')[0]:'/static/player/plays.jpg'}}" mode="aspectFit" style="position:absolute;left:15px;top:10px;width:50px;height:50px"></image>
+                </view>
+                <view class="center_box">
+                    <view class="name">{{item.songname}}</view>
+                    <view class="singer">{{item.singer}}</view>
+                </view>
+                <view class="right">
+                    <image src="/static/player/shanchu.png" mode="aspectFit" catchtap="delListClick" style="width: 24px;height: 24px;" data-index="{{index}}"></image>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="playView">
+        <view class="playLeft">
+            <image src="{{musicIndex!= -1&&list.length&&list[musicIndex].tupian? baseUrl + list[musicIndex].tupian.split(',')[0]:'/static/player/plays.jpg'}}" mode="aspectFill"></image>
+        </view>
+        <view class="playRight">
+            <view class="top">
+                <view class="info">{{musicIndex!= -1&&list.length ?list[musicIndex].songname:''}} -
+                    {{musicIndex != -1&&list.length?list[musicIndex].singer:''}}
+                </view>
+                <view class="play">
+                    <image class="bofang" catchtap="playsClick" wx:if="{{!playType}}" src="/static/player/bofang.png" mode="widthFix"></image>
+                    <image class="bofang" catchtap="pauseClick" wx:if="{{playType}}" src="/static/player/zanting.png" mode="widthFix"></image>
+                         <!-- 下一曲 -->
+                         <image class="bofang1" src="http://localhost:8080/sportsPhotography/file/528ba49333474b8780c2f64d595a8dc7.png" mode="widthFix" bindtap="next"> </image>
+        
+                   <!-- 单曲循环 -->
+                    <image class="bofang1"  wx:if="{{playMode==='single'}}"  bindtap="shuffle" src="/static/player/danqu.png" mode="widthFix"></image>
+                       <!-- 随机 -->
+                    <image class="bofang1" bindtap="sequentialPlayback" data-index="3" wx:if="{{playMode==='shuffle'}}"  src="/static/player/suiji.png" mode="widthFix"></image>
+                    <!-- 默认列表播放 -->
+                    <image class="bofang1" wx:if="{{playMode==='sequential'}}" src="/static/player/sort.png" bindtap="singlePlayback"  mode="widthFix"/>
+           
+                    <image class="bofang2" bindtap="listClick"  src="/static/player/list.png" mode="widthFix"></image> 
+                </view>
+            </view>
+            <view style="display: flex;align-items: center;">
+                <text>{{nowTime}}</text>
+                <slider value="{{baifenbi}}" bindchange="sliderChange" min="0" max="100" style="width: 100%;" block-color="#ff0000" :block-size="12" />
+                <text>{{allTime}}</text>
+            </view>
+        </view>
+    </view>
+</view>
